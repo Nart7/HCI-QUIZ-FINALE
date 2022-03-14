@@ -11,15 +11,18 @@ const initialStateOfQuestion = {
     description: ``
 };
 
+// Score Section
 const Score = ({ score, questions = [], resetAll }) => {
     const [currentQustion, setCurrentQuestion] = useState(initialStateOfQuestion);
     const [nextQuestion, setNextQuestion] = useState(0);
     const [prevQuestion, setPrevQuestion] = useState(0);
 
     useEffect(() => {
+        // Update Current Question State
         if (questions.length) setCurrentQuestion(questions[0]);
     }, [])
 
+    // Next Question Function
     const onNextQuestion = () => {
         const allQuestionsIndexs = questions.length ;
         const nextIndex = nextQuestion + 1;
@@ -34,6 +37,7 @@ const Score = ({ score, questions = [], resetAll }) => {
         }
     };
 
+    // Previous Question Function
     const onPreviousQuestion = () => {
         const allQuestionsIndexs = questions.length;
         if (prevQuestion > 0 && prevQuestion < allQuestionsIndexs) {

@@ -6,8 +6,9 @@ import { questionsList } from '../../constants/questions';
 
 import styles from './main.module.scss';
 
-
+// Main Page 
 const Main = () => {
+  // Question List in Json
   const questions = questionsList;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -15,6 +16,7 @@ const Main = () => {
   const [score, setScore] = useState(0);
   const [isTestStart, setIsTestStart] = useState(false);
 
+  // Select the Answer
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -28,6 +30,7 @@ const Main = () => {
     }
   };
 
+  // Reset all data
   const resetAll = () => {
     setCurrentQuestion(0);
     setShowScore(false);

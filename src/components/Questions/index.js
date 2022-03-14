@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from './questions.module.scss';
 // import  './questions.module.scss';
+
+// Show Question Component
 const Questions = ({ currentQuestion, questions, handleAnswerOptionClick}) => {
     return <>
         <div className={styles.questionSection}>
